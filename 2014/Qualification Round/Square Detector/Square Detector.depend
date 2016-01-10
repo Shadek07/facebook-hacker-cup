@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1452403145 source:d:\contest\facebook hacker cup\2014\qualification round\square detector\main.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<vector>
+	<map>
+	<set>
+	<string>
+	<cmath>
+	<cstdlib>
+	<cctype>
+	<algorithm>
+	<queue>
+	<sstream>
+	<stack>
+	<list>
+	<bitset>
+	<iomanip>
+	<cstring>
+
