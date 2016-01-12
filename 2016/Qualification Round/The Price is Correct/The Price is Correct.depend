@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1452343653 source:d:\contest\facebook hacker cup\2016\qualification round\the price is correct\main.cpp
+	<iostream>
+	<cstring>
+	<cstdio>
+	<vector>
+	<map>
+	<set>
+	<string>
+	<cmath>
+	<cstdlib>
+	<cctype>
+	<algorithm>
+	<queue>
+	<sstream>
+	<stack>
+	<list>
+	<bitset>
+	<iomanip>
+	<fstream>
+	<ctime>
+	<climits>
+
