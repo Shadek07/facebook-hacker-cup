@@ -53,14 +53,15 @@ int prefix[SZ][SZ];
 int len[SZ];
 char in[SZ][MAX];
 int dp[SZ][SZ];
-int comp(char a[MAX], char b[MAX]){
-    if(strcmp(a,b) < 0)
+int comp(int a, int b){
+    if(strcmp(in[a],in[b]) < 0)
         return 1;
-    return 0;
+    else
+        return 0;
 }
 int main(void)
 {
-    freopen("large_input.txt", "r", stdin);
+    freopen("text_editor.txt", "r", stdin);
     freopen("2.txt", "w", stdout);
     int n,t,K;
     int i,j,k,cnt,a,b;
@@ -71,21 +72,23 @@ int main(void)
         scanf("%d %d",&n,&K);
         getchar();
         len[0] = 0;
-        
+        vector<int> v;
         forl(i,1,n+1){
+            v.pb(i);
             gets(in[i]);
         }
-        //sort(in,in+n, comp);
-        for(i=1;i<n;i++){
+        sort(all(v), comp);
+        /*for(i=1;i<n;i++){
             for(j=1;j<=n-i;j++){
                 if(strcmp(in[j+1],in[j]) < 0){
                     swap(in[j],in[j+1]);
                 }
             }
-        }
+        }*/
+        
         for(i=1;i<=n;i++){
-            cout << in[i] << endl;
-            len[i] = strlen(in[i]);
+            //cout << in[i] << endl;
+            len[i] = strlen(in[ v[i-1] ]);
         }
         forl(i,0,n){
             forl(j,i+1,n+1){
@@ -95,7 +98,7 @@ int main(void)
         forl(i,1,n){
             forl(j,i+1,n+1){
                 cnt = 0;
-                while(in[i][cnt] && in[j][cnt] && in[i][cnt] == in[j][cnt])
+                while(in[v[i-1]][cnt] && in[v[j-1]][cnt] && in[v[i-1]][cnt] == in[v[j-1]][cnt])
                     cnt++;
                 prefix[i][j] = prefix[j][i] = cnt;
             }
