@@ -48,7 +48,7 @@ long long to_int(const string &s) { stringstream ss; ss << s; long long x; ss >>
 #define MAX 2005
 #define INF 9999999
 
-long long pnts[MAX][2];
+int pnts[MAX][2];
 long long dis[MAX][MAX];
 bool isEqual(int i, int j, int k){ //i-j, i-k
     long long a,b;
@@ -63,7 +63,7 @@ long long getDist(int i, int j){
   return c*c + d*d;
 }
 
-map<long long, int> mp;
+
 int main(void)
 {
     freopen("boomerang_constellations.txt", "r", stdin);
@@ -102,7 +102,7 @@ int main(void)
     while(t--){
         scanf("%d",&n);
         forl(i,0,n){
-            scanf("%lld %lld",&pnts[i][0], &pnts[i][1]);
+            scanf("%d %d",&pnts[i][0], &pnts[i][1]);
         }
         cnt=0;
         forl(i,0,n){
@@ -114,7 +114,7 @@ int main(void)
             }
         }
         forl(i,0,n){
-            mp.clear();
+            map<long long, int> mp;
             forl(j,0,n){
                 if(i == j)
                     continue;
@@ -127,7 +127,8 @@ int main(void)
                 cnt += ((b)*(b-1))/2;
             }*/
         }
-        printf("Case #%d: %lld\n",ca,cnt);
+        printf("Case #%d: %d\n",ca,cnt);
+        
         ca++;
     }
     return 0;
